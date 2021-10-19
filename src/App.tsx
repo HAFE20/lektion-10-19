@@ -1,5 +1,5 @@
 // import React from 'react';
-import { Link, Switch, Route } from 'react-router-dom'
+import { Link, Switch, Route, Redirect } from 'react-router-dom'
 import Start from './components/start/Start'
 import FriendList from './components/friends/FriendList'
 import BadUrl from './components/BadUrl'
@@ -21,6 +21,7 @@ function App() {
 	<Switch>
 		<Route path="/" exact> <Start /> </Route>
 		<Route path="/friends"> <FriendList /> </Route>
+		<Route path="/friendsss"> <Redirect to="/friends" /> </Route>
 		<Route path="/"> <BadUrl /> </Route>
 	</Switch>
 	</main>
