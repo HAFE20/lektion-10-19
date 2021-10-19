@@ -1,38 +1,72 @@
+/*
+CSS specificitet - tre kategorier
+1:	id - #exempel
+2:	CSS-klasser och pseudoklasser - :hover
+3:	HTML-element och pseudoelement - ::before, ::after
+4:	* - universal selector, ingen prioritet
+*/
+body {
+	--darker-color: #DC9E45;
+	--brighter-color: #F6E4CB;
+	font-size: 1.2em;
+}
+header, footer {
+	background: var(--darker-color);
+	color: var(--brighter-color);
+	padding: 1em;
+}
+main {
+	flex-grow: 1;
+	padding: 1em;
+	background: var(--brighter-color);
+	color: var(--darker-color);
+}
+
+.container {
+	display: flex;
+}
+.container > * {
+	flex-grow: 1;
+}
+
 .App {
-  text-align: center;
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	height: 100vh;
 }
 
 .App-logo {
-  height: 40vmin;
-  pointer-events: none;
+	height: 40vmin;
+	pointer-events: none;
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+	.App-logo {
+		animation: App-logo-spin infinite 20s linear;
+	}
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+	background-color: #282c34;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	font-size: calc(10px + 2vmin);
+	color: white;
 }
 
 .App-link {
-  color: #61dafb;
+	color: #61dafb;
 }
 
 @keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+	}
 }
