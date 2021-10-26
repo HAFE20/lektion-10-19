@@ -3,6 +3,7 @@ import { Link, Switch, Route, Redirect } from 'react-router-dom'
 import Start from './components/start/Start'
 import FriendList from './components/friends/FriendList'
 import FindFriends from './components/search/FindFriends'
+import Details from './components/friends/Details'
 import BadUrl from './components/BadUrl'
 import './App.css';
 
@@ -21,6 +22,7 @@ function App() {
 	<main>
 	<Switch>
 		<Route path="/" exact> <Start /> </Route>
+		<Route path="/friends/:id"> <Details /> </Route>
 		<Route path="/friends"> <FriendList /> </Route>
 		<Route path="/friendsss"> <Redirect to="/friends" /> </Route>
 		<Route path="/search"> <FindFriends /> </Route>
